@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart pratice</title>
+<style>
+  .sho{
+    background-color: green;
+    color: yellow;
+    border: none;
+    height: 25px;
+    width: 50px;
+  }
+ 
+  .add{
+background-color: yellow;
+    color: black;
+    border: none;
+    height: 25px;
+    width: 90px;
+    font-weight: bold;
+  }
+  
+  .three{
+     background-color: rgb(54, 140, 180);
+    color: yellow;
+    border: none;
+    height: 25px;
+    width: 50px;
+  }
+
+  .four{
+     background-color: rgb(114, 44, 56);
+    color: yellow;
+    border: none;
+    height: 25px;
+    width: 50px;
+  }
+
+  .reset{
+     background-color: red;
+    color: rgb(72, 84, 141);
+    border: none;
+    height: 25px;
+    width: 50px;
+  }
+</style>
+</head>
+
+<body>
+  
+  <button class="sho" onclick="
+    console.log(`show: ${showQuantity}`);
+    ">Shop</button>
+  <button class="add" onclick="
+  showQuantity = showQuantity + 1
+  console.log(`show: ${showQuantity}`);
+  ">Add to cart</button>
+  <button class="three" onclick="
+  showQuantity = showQuantity + 3
+  console.log(`show: ${showQuantity}`);
+  ">+3</button>
+  <button class="four" onclick="
+  showQuantity = showQuantity + 4;
+console.log(`show: ${showQuantity}`);
+  ">+4</button>
+  <button class="reset" onclick="
+  showQuantity = 0;
+  console.log('show was reset.');
+  console.log(`show: ${showQuantity}`);
+  ">reset</button>
+
+
+  <script>
+    let showQuantity = 0;
+  </script>
+
+</body>
+</html>
