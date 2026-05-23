@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    #btn{
+      background-color: red;
+      border: none;
+      height: 120px;
+      width: 240px;
+      border-radius: 60px;
+      font-weight: bolder;
+      color: white;
+      font-size: larger;
+     
+    }
+  </style>
+   
+
+  <button class="js-subscribe" id="btn" onclick="
+  subscribeBtn();
+  ">Subscribe</button>
+
+  <script>
+    function subscribeBtn () {
+      const subscribe = document.querySelector('.js-subscribe');
+    
+      if (subscribe.innerText === 'Subscribe') {
+     subscribe.innerHTML = 'Subscribed';
+    } else {
+      subscribe.innerHTML = 'Subscribe';
+    }
+    }
+  </script>
+</body>
+</html>

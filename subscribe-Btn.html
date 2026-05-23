@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <title>SubscribeBtn</title>
+</head>
+<body>
+  <style>
+    body{
+   background-color: black;
+   font: 1em sans-serif;
+   align-items: center;
+   justify-items: center;
+   display: flex;
+   justify-content: center;
+    }
+
+
+
+ #sub{
+  font-weight: bolder;
+  font-size: 50px;
+  align-items: center;
+  height: 300px;
+  width: 600px;
+  border-radius: 300px;
+  background-color: red;
+  color: white;
+  
+ } 
+ 
+  </style>
+  <button id="sub" class="js-subscribeBtn" onclick="
+    subscribeBtn();
+    ">Subscribe</button>
+
+
+  <script>
+ function subscribeBtn () {
+  const subscribe = document.querySelector('.js-subscribeBtn')
+
+  if (subscribe.innerHTML === 'Subscribe') {
+    subscribe.innerHTML = 'Subscribed 🔔';
+  } else {
+    subscribe.innerHTML = 'Subscribe';
+  }
+ }
+  </script>
+</body>
+</html>

@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>ROCK-PAPER-SCISSOR</title>
 </head>
 <body class="body">
 
 <style>
-
-.body{
+body{
   background-color: black;
+  color: yellow;
+}
+p{
+  font-weight: bold;
 }
 
 
@@ -19,6 +22,7 @@
   color: yellow;
   border: none;
   font-weight: bold;
+  font-size: 30px;
   height: 90px;
   width: 200px;
   border-radius: 50px;
@@ -32,6 +36,7 @@
   color: yellow;
   border: none;
   font-weight: bold;
+  font-size: 30px;
   height: 90px;
   width: 200px;
   border-radius: 50px;
@@ -43,7 +48,8 @@
   background-color: brown;
   color: yellow;
   border: none;
-  font-weight: bold;
+  font-weight: bolder;
+  font-size: 35px;
   height: 90px;
   width: 200px;
   border-radius: 50px;
@@ -55,6 +61,7 @@
   background-color: red;
   color: yellow;
   border: none;
+  font-size: 25px;
   font-weight: bold;
   height: 90px;
   width: 200px;
@@ -63,36 +70,53 @@
   cursor: pointer;
 }
 
-
+#resut{
+  font-size: 40px;
+  font-weight: bolder;
+}
+#moves{
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
 </style>
 
  <button class="rock"  onclick="
  playGame ('rock');
-  ">Rock </button>
+  "> 👊 </button>
   
   
   <button class="paper" onclick="
  playGame('paper');
   
-  ">Paper </button>
+  "> ✋ </button>
   <button class="scissors" onclick="
  playGame('scissors');
-">Scissors </button>
+"> ✌️</button>
+<p id="resut" class="js-result"></p>
+<p id="moves" class="js-moves"></p>
+<p class="js-score"></p>
 
 <button class="reset" onclick="
 score.Wins =0;
 score.Losses = 0;
 score.Ties = 0;
-
+localStorage.removeItem('score')
+updateScoreElement();
 ">Reset Score</button>
 
  
  <script>
-    const score = {
+    
+
+   let score = JSON.parse(localStorage.getItem('score')) || {
+    
       Wins : 0,
       Losses : 0,
       Ties : 0,
-    }
+    };
+   
+  updateScoreElement();
    
    function playGame(playerMove) {
       const computerMove = ChooseComputerMove();
@@ -138,10 +162,24 @@ if (result === 'you win.') {
 } else if (result === 'Tie.') {
   score.Ties += 1;
 }
-   
 
-alert( `You picked ${playerMove}. Computer picked ${computerMove}. ${result} Wins: ${score.Wins}, Losses: ${score.Losses}, Ties: ${score.Ties}`);
+
+localStorage.setItem('score', JSON.stringify (score));
+
+updateScoreElement();
+
+document.querySelector('.js-result').innerHTML = result;
+
+document.querySelector('.js-moves').innerHTML = `you ${playerMove} - ${computerMove}    Computer`;
   
+/*alert( `You picked ${playerMove}. Computer picked ${computerMove}. ${result} Wins: ${score.Wins}, Losses: ${score.Losses}, Ties: ${score.Ties}`);
+  */
+}
+
+ function updateScoreElement() {
+document.querySelector('.js-score')
+   .innerHTML = `Wins: ${score.Wins}, Losses: ${score.Losses}, Ties: ${score.Ties}`;
+   
  }
 
     function ChooseComputerMove()
