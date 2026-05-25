@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+<style>
+  body{
+    background-color: black;
+    color:yellowgreen;
+  }
+  .container{
+    display: flex;
+    //flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    margin-top: 100px;
+  }
+
+  .hd{
+  height: 100px;
+  width: 200px;
+  border: none;
+  border-radius: 100px;
+  background-color: green;
+  color: yellow;
+  font-size: larger;
+  font-weight: bolder;
+  margin-right: 60px;
+  }
+  .tl{
+     height: 100px;
+  width: 200px;
+  border: none;
+  border-radius: 100px;
+  background-color: red;
+  color: yellow;
+  font-size: larger;
+  font-weight: bolder;
+  margin-right: 60px;
+
+  }
+  .message{
+    display:flex ;
+    flex-direction: column;
+    font-size: larger;
+    font-weight: bolder;
+  }
+</style>
+
+<div class="container">
+<button class="hd" id="headbtn">Head</button>  
+<button class="tl" id="btn">Tail</button>
+<br>
+<p class="message" id="message"></p>
+</div>
+<script>
+const button = document.getElementById("headbtn")
+const paragraph = document.getElementById("message")
+const button2 = document.getElementById("btn")
+
+button.addEventListener("click", function () {
+  paragraph.textContent = "you picked: Head"
+})
+
+button2.addEventListener("click", function () {
+  paragraph.textContent = "you picked: Tail"
+})
+</script>
+</body>
+</html>
