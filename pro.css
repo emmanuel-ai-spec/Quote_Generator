@@ -1,0 +1,29 @@
+body{
+  background-color: gray;
+  color: rgb(19, 19, 18);
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.title{
+  font-size: 30px;
+  font-weight: bolder;
+  font-style: italic;
+}
+
+.add{
+  height: 70px;
+  width: 100px;
+  background-color: rgb(19, 185, 19);
+  color: yellow;
+  border: none;
+  border-radius: 20px;
+ 
+}
+
+#input-text{
+  height: 70px;
+  width: 180px;
+  border-radius: 20px;
+  border: none;
+ margin-right: 10px;
+}

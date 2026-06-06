@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p>Todo List</p>
+  <input type="text" placeholder="Todo name" class="js-input-name">
+  <button onclick="
+  todoInput();
+  ">Add</button>
+
+  <p id="js-paragragh"></p>
+
+
+
+  <script>
+const todoList = [];
+
+function todoInput () {
+  const inputElem = document.querySelector(".js-input-name")
+  const name = inputElem.value
+  todoList.push(name);
+  console.log(todoList);
+  inputElem.value = "";
+}
+
+function pgTag () {
+  const inputText = document.getElementById('js-paragraph')
+  
+}
+
+
+
+
+
+/*
+   let f = 1;
+    while (f <= 5) {
+    console.log(f);
+    f++
+    };
+    */
+/*
+    for (let f = 1; f <= 5; f++) {
+      console.log(f);
+    };
+    */
+  /*
+    for (let i = 5; i >=1; i--) {
+  console.log('hello', i);
+   }
+   */
+/*
+   const array = ["Emmanuel","David","Ayomide","Tolu"]
+
+   console.log(array[3]);
+   */
+  </script>
+</body>
+</html>
